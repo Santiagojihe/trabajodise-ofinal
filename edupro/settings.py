@@ -1,10 +1,9 @@
 INSTALLED_APPS = [
-    # ...
-    "apps.users",
     "apps.courses",
-    "apps.assessments",
+    "apps.assessment",
     "apps.forums",
     "apps.reports",
+    "apps.users",
 ]
 
 AUTH_USER_MODEL = "users.User"
