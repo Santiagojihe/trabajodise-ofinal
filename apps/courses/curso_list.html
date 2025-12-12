@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Cursos</h2>
+
+{% for c in cursos %}
+  <div class="card">
+    <h3><a href="{% url 'curso_detail' c.pk %}">{{ c.titulo }}</a></h3>
+    <p>{{ c.descripcion|default:"(sin descripción)" }}</p>
+  </div>
+{% empty %}
+  <p>No hay cursos.</p>
+{% endfor %}
+{% endblock %}

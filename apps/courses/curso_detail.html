@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>{{ curso.titulo }}</h2>
+<p>{{ curso.descripcion }}</p>
+
+<h3>Recursos</h3>
+<ul>
+  {% for r in curso.recursos.all %}
+    <li>{{ r.titulo }} ({{ r.tipo }}) {% if r.url %}- <a href="{{ r.url }}">abrir</a>{% endif %}</li>
+  {% empty %}
+    <li>No hay recursos.</li>
+  {% endfor %}
+</ul>
+
+<h3>Exámenes</h3>
+<ul>
+  {% for e in curso.examenes.all %}
+    <li>{{ e.titulo }} {% if e.habilitado %}(habilitado){% else %}(no habilitado){% endif %}</li>
+  {% empty %}
+    <li>No hay exámenes.</li>
+  {% endfor %}
+</ul>
+
+<h3>Retroalimentación</h3>
+<ul>
+  {% for f in curso.retroalimentaciones.all %}
+    <li><strong>{{ f.estudiante.username }}</strong>: {{ f.mensaje }}</li>
+  {% empty %}
+    <li>No hay retroalimentación.</li>
+  {% endfor %}
+</ul>
+
+{% endblock %}
