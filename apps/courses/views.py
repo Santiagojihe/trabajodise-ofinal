@@ -2,11 +2,13 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404, redirect, render
 from django.views.generic import ListView, DetailView
-from .models import Curso, Inscripcion, ForoDiscusion
+from .models import Curso, Inscripcion
+from apps.forums.models import ForoDiscusion
 
 class CursoListView(ListView):
     model = Curso
-    template_name = "courses/curso_list.html"
+    #template_name = "courses/curso_list.html" ############posible error here
+    template_name = "curso_list.html"
     context_object_name = "cursos"
 
 class CursoDetailView(DetailView):
