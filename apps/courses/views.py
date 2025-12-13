@@ -5,6 +5,9 @@ from django.views.generic import ListView, DetailView
 from .models import Curso, Inscripcion
 from apps.forums.models import ForoDiscusion
 
+def curso_list(request):
+    return render(request, "courses/curso_list.html")
+
 class CursoListView(ListView):
     model = Curso
     #template_name = "courses/curso_list.html" ############posible error here

@@ -15,7 +15,7 @@
 <header>
   <nav>
     <a href="{% url 'index' %}">Inicio</a>
-    <a href="{% url 'curso_list' %}">Cursos</a>
+    <a href="{% url 'courses:curso_list' %}">Cursos</a>
     {% if user.is_authenticated %}
       <a href="{% url 'logout' %}">Salir</a>
     {% else %}
