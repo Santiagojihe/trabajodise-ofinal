@@ -12,7 +12,7 @@ urlpatterns = [
     path("", TemplateView.as_view(template_name="index.html"), name="index"),
 
     path("cursos/", include("apps.courses.urls")),
-    path("examenes/", include("apps.assessments.urls")),
+    path("examenes/", include("apps.assessment.urls")),
     path("foros/", include("apps.forums.urls")),
     path("reportes/", include("apps.reports.urls")),
 ]
