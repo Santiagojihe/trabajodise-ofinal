@@ -8,7 +8,7 @@ from apps.forums.models import ForoDiscusion
 class CursoListView(ListView):
     model = Curso
     #template_name = "courses/curso_list.html" ############posible error here
-    template_name = "curso_list.html"
+    template_name = "courses/curso_list.html"
     context_object_name = "cursos"
 
 class CursoDetailView(DetailView):
