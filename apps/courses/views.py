@@ -13,7 +13,7 @@ class CursoListView(ListView):
 
 class CursoDetailView(DetailView):
     model = Curso
-    template_name = "courses/curso_detail.html"
+    template_name = "curso_detail.html"
     context_object_name = "curso"
 
 @login_required
